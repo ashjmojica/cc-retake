@@ -1,12 +1,24 @@
 import React from "react";
 import Poem from "./Poem";
 
-function PoemsContainer() {
+
+
+const PoemsContainer = ({poems}) => {
+
+
+
   return (
-    <div className="poems-container">
-      {/* render a list of <Poem> components in here */}
+    <div className="poems-container" > 
+  {
+poems.map(poem=>{
+  return <Poem title={poem.title} id={poem.id} content={poem.content} 
+  author={poem.author} />
+  
+})
+  }
+     
+      
     </div>
-  );
-}
+)}
 
 export default PoemsContainer;
